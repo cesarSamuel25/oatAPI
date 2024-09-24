@@ -31,7 +31,7 @@ function salvar(){
 
 function pesquisarIndex(nome){
   for(let index in produtos){
-    if(produtos[index].Produto.toLowerCase() == nome.toLowerCase()){
+    if(produtos[index].Produto.toLowerCase()  == nome.toLowerCase()){
       return index;
     }
   }
