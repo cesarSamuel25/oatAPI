@@ -29,17 +29,9 @@ function salvar(){
   localStorage.produtos = JSON.stringify(produtos);
 }
 
-function removerAcento(nome){
-  nome.replace(/[áàãâ]/, 'a')
-  nome.replace(/[éèê]/, 'e')
-  nome.replace(/[íìî]/, 'i')
-  nome.replace(/[ôõòó]/, 'o')
-  nome.replace(/[ûúù]/, 'u')
-}
-
 function pesquisarIndex(nome){
   for(let index in produtos){
-    if(removerAcento(produtos[index].Produto.toLowerCase()) == removerAcento(nome.toLowerCase())){
+    if(produtos[index].Produto.toLowerCase() == nome.toLowerCase()){
       return index;
     }
   }
