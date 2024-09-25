@@ -31,7 +31,7 @@ function salvar(){
 
 function pesquisarIndex(nome){
   for(let index in produtos){
-    if(produtos[index].Produto.toLowerCase()  == nome.toLowerCase()){
+    if(produtos[index].Produto.toLowerCase()  == nome.toLowerCase() && nome !== undefined){
       return index;
     }
   }
@@ -116,14 +116,16 @@ function atualizarEstoque(nome){
 };
 
 function removerProduto(nome){
-  let confirmacao = confirm(`Deseja realmenta APAGAR o produto: "${nome}" ?`)
-  if(confirmacao == true){
+  if((pesquisarIndex(nome)) != undefined && nome != null ){
+    let confirmacao = confirm(`Deseja realmenta APAGAR o produto: "${nome}" ?`);
+    if(confirmacao === true){
     produtos.splice(pesquisarIndex(nome), 1);
-  }else{
+    }else{
     alert('Operação cancelada!')
+    } 
+  }else{
+    alert('Produto não encontrado!')
   }
-
-  
 }
 
 btnAdd.addEventListener('click', (event) => {
