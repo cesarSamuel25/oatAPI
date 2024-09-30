@@ -18,7 +18,7 @@ mostrarTabela();
 
 function criarProduto(Nome, Quantidade){
   produtos.push({
-    "Produto" : Nome,
+    "Produto" : Nome.trim(),
     "Quantidade" : Number(Quantidade)
   });
   mostrarTabela();
